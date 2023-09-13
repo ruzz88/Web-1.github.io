@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <link rel="stylesheet" href="./C1_landing.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+    />
+  </head>
+  <body>
+    <h1>"Welcome to the website"</h1>
+    <div class="landing">
+      <div class="projects" id="projectsText">Projects</div>
+      <div class="academy">Academy</div>
+      <div class="blog">Blog</div>
+      <div class="team">Team</div>
+      <div class="rectangle-parent">
+        <div class="group-child"></div>
+        <div class="sign-in">Sign In</div>
+      </div>
+      <div class="we-design">WE DESIGN</div>
+      <img src="image/astro.png" alt="astro" class="astro" />
+
+      <div class="digital-products">DIGITAL PRODUCTS</div>
+      <div class="lorem-ipsum-dolor">
+        Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum
+        dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.
+      </div>
+      <div class="get-in-touch">Get in touch</div>
+      <div class="news">
+        <div id="newsContent"></div>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        let newsIndex = 0;
+        let newsData = [];
+
+        function truncateToWords(str, numWords) {
+          return str.split(" ").splice(0, numWords).join(" ");
+        }
+
+        function animateLetters(content) {
+          return content
+            .split("")
+            .map((letter) => `<span class="letter-animation">${letter}</span>`)
+            .join("");
+        }
+
+        function displayNews() {
+          let newsContent = document.getElementById("newsContent");
+          if (newsData.length > 0) {
+            let truncatedDescription = truncateToWords(
+              newsData[newsIndex].description,
+              30
+            );
+            let animatedDescription = animateLetters(truncatedDescription);
+            newsContent.innerHTML = `
+                <h3>${animateLetters(newsData[newsIndex].title)}</h3>
+                <p>${animatedDescription}</p>
+                <a href="${
+                  newsData[newsIndex].url
+                }" target="_blank">Read more</a>
+            `;
+            newsIndex = (newsIndex + 1) % newsData.length;
+          } else {
+            newsContent.innerHTML = "<p>No news available at the moment.</p>";
+          }
+        }
+
+        fetch(
+          "https://api.currentsapi.services/v1/latest-news?category=design&apiKey=Mv5owQsAJZIy-7pExCsqbomxdHUvzoENOpO9QE5HK5bRmF-G"
+        )
+          .then((response) => response.json())
+          .then((data) => {
+            newsData = data.news;
+            displayNews();
+            setInterval(function () {
+              document.getElementById("newsContent").classList.add("fade-out");
+              setTimeout(function () {
+                displayNews();
+                document
+                  .getElementById("newsContent")
+                  .classList.remove("fade-out");
+                document.getElementById("newsContent").classList.add("fade-in");
+              }, 1000);
+            }, 9000);
+          })
+          .catch((error) => {
+            console.error("Error fetching news:", error);
+          });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,197 @@
+.projects {
+    position: absolute;
+    top: 63px;
+    left: 100px;
+    font-weight: 500;
+    cursor: pointer;
+}
+.academy {
+    position: absolute;
+    top: 63px;
+    left: 215px;
+    font-weight: 500;
+}
+.blog {
+    position: absolute;
+    top: 63px;
+    left: 342px;
+    font-weight: 500;
+}
+.team {
+    position: absolute;
+    top: 63px;
+    left: 431px;
+    font-weight: 500;
+}
+.group-child {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border-radius: 50px;
+    background-color: #ff7940;
+    width: 100px;
+    height: 40px;
+}
+.sign-in {
+    position: absolute;
+    top: 9px;
+    left: 26px;
+    font-weight: 500;
+}
+.rectangle-parent {
+    position: absolute;
+    top: 54px;
+    left: 1125px;
+    width: 100px;
+    height: 40px;
+}
+.we-design {
+    position: absolute;
+    top: 163px;
+    left: 506px;
+    font-size: 55px;
+    font-weight: 600;
+}
+.astro{
+    position: absolute;
+    height: 67.5%;
+    width: 37.81%;
+    top: 23.89%;
+    right: 0.78%;
+    bottom: 8.61%;
+    left: 61.41%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+    object-fit: cover;
+}
+.digital-products {
+    position: absolute;
+    top: 246px;
+    left: 391px;
+    font-size: 55px;
+    font-weight: 600;
+}
+.lorem-ipsum-dolor {
+    position: absolute;
+    top: 515px;
+    left: 391px;
+    text-align: center;
+    display: inline-block;
+    width: 519px;
+    height: 59px;
+}
+.get-in-touch {
+    position: absolute;
+    top: 610px;
+    left: 605px;
+    font-size: 18px;
+    text-decoration: underline;
+    font-weight: 500;
+    color: #ff7940;
+    text-align: center;
+}
+
+/* ---------------------------------------News---------------------------------- */
+.news {
+    position: absolute;
+    top: 318px;
+    left: 88px;
+    border-radius: 27px;
+    background-color: #65282828;
+    width: 269px;
+    height: 227px;
+    overflow: hidden;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+#newsContent.fade-in {
+    animation: fadeIn 1s forwards;
+}
+
+#newsContent.fade-out {
+    animation: fadeOut 1s forwards;
+}
+
+
+#newsContent {
+    animation: fadeIn 2s;
+    padding: 12px;
+    overflow-y: auto;
+    height: 100%;
+}
+.newsItem {
+    margin-bottom: 20px;
+}
+
+.newsItem h3 {
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+
+.newsItem p {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.newsItem a {
+    font-size: 12px;
+    text-decoration: underline;
+    color: #fff;
+}
+
+#newsContent {
+    padding: 10px;
+    overflow: hidden;
+}
+
+.letter-animation {
+    display: inline-block;
+    animation: fadeIn 0.9s forwards;
+    opacity: 5;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(1em);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+
+/* ------------------------------------------------------------------------------------- */
+.landing {
+    position: relative;
+    background: linear-gradient(103.64deg, #7306fb, #0089e8);
+    width: 100%;
+    height: 720px;
+    overflow: hidden;
+    text-align: left;
+    font-size: 14px;
+    color: #fff;
+    font-family: Poppins;
+}
+
